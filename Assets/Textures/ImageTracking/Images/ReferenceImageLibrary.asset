@@ -21,7 +21,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 420116681237021631
       m_GuidHigh: 2249590083616453945
-    m_Size: {x: 0.254, y: 0.254}
+    m_Size: {x: 0.3, y: 0.3}
     m_SpecifySize: 1
     m_Name: pointerMarker
     m_Texture: {fileID: 2800000, guid: 4d5943bf8de505d4393533204326381f, type: 3}
@@ -31,7 +31,7 @@ MonoBehaviour:
     m_SerializedTextureGuid:
       m_GuidLow: 15606148701904901011
       m_GuidHigh: 7121794999009767755
-    m_Size: {x: 0.254, y: 0.254}
+    m_Size: {x: 0.3, y: 0.3}
     m_SpecifySize: 1
     m_Name: cameraMarker
     m_Texture: {fileID: 2800000, guid: 38f713932d8fd8944b712197d1b2d562, type: 3}

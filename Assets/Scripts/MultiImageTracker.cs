@@ -12,8 +12,6 @@ using UnityEngine.XR.ARFoundation;
 public class MultiImageTracker : MonoBehaviour, ISerializationCallbackReceiver
 {
 
-    string message = "Multi Image Scanning Starts";
-
     GameObject Object;
 
     // TODO: Getting More Information on Scanning
@@ -75,21 +73,21 @@ public class MultiImageTracker : MonoBehaviour, ISerializationCallbackReceiver
 
     void Awake()
     {
-        ar_RaycastManager = GetComponent<ARRaycastManager>(); //Detected features in the physical environmen
+        //ar_RaycastManager = GetComponent<ARRaycastManager>(); //Detected features in the physical environmen
         trackingStateText = GameObject.Find("trackingStateText").GetComponent<Text>();
         m_TrackedImageManager = GetComponent<ARTrackedImageManager>();
     }
 
-    bool TryGetTouchPosition(out Vector2 touchPosition) {
-        // TODO: Spawn an Object on the Scanned Image with Touch Method 
-        if (Input.touchCount > 0)
-        {
-            touchPosition = Input.GetTouch(0).position;
-            return true;
-        }
-        touchPosition = default;
-        return false;
-    }
+    //bool TryGetTouchPosition(out Vector2 touchPosition) {
+    //    // TODO: Spawn an Object on the Scanned Image with Touch Method 
+    //    if (Input.touchCount > 0)
+    //    {
+    //        touchPosition = Input.GetTouch(0).position;
+    //        return true;
+    //    }
+    //    touchPosition = default;
+    //    return false;
+    //}
 
     private void Update() {
         Object = GameObject.FindGameObjectWithTag("Compass"); // Returns one active Compass Object tagged tag.
@@ -106,12 +104,12 @@ public class MultiImageTracker : MonoBehaviour, ISerializationCallbackReceiver
     void OnTrackedImagesChanged(ARTrackedImagesChangedEventArgs eventArgs) {
         foreach (var trackedImage in eventArgs.added) {
             // Give the initial image a reasonable default scale
-            var minLocalScalar = Mathf.Min(trackedImage.size.x, trackedImage.size.y) / 10;
+            var minLocalScalar = Mathf.Min(trackedImage.size.x, trackedImage.size.y) / 2;
             trackedImage.transform.localScale = new Vector3(minLocalScalar, minLocalScalar, minLocalScalar);
             AssignPrefab(trackedImage);
         }
         foreach (ARTrackedImage updatedImage in eventArgs.updated) {
-            var minLocalScalar = Mathf.Min(updatedImage.size.x, updatedImage.size.y) / 10;
+            var minLocalScalar = Mathf.Min(updatedImage.size.x, updatedImage.size.y) / 2;
             updatedImage.transform.localScale = new Vector3(minLocalScalar, minLocalScalar, minLocalScalar);
 
             if (updatedImage.trackingState == UnityEngine.XR.ARSubsystems.TrackingState.Tracking) {
@@ -137,9 +135,11 @@ public class MultiImageTracker : MonoBehaviour, ISerializationCallbackReceiver
     }
 
     void updatePrefab(ARTrackedImage updatedImage) {
+        
         trackingStateText.text = "Marker Tracked";
         trackingStateText.color = Color.green;
         m_Instantiated[updatedImage.referenceImage.guid].SetActive(true);
+
         if (updatedImage.referenceImage.name == "pointerMarker") {
             Object.GetComponent<GPSManager>().trackedImageTransform = updatedImage.transform;
             Object.GetComponent<GPSManager>().pointerMarkerDetection = true;
@@ -148,7 +148,7 @@ public class MultiImageTracker : MonoBehaviour, ISerializationCallbackReceiver
 
     // TODO: Spawn an Object on the Scanned Image with Touch Method
     static List<ARRaycastHit> hits = new List<ARRaycastHit>();
-    private ARRaycastManager ar_RaycastManager;
+    //private ARRaycastManager ar_RaycastManager;
 
 
     void updateLimitedPrefab(ARTrackedImage updatedImage) {
@@ -180,10 +180,6 @@ public class MultiImageTracker : MonoBehaviour, ISerializationCallbackReceiver
     }
 
 #if UNITY_EDITOR
-    /// <summary>
-    /// This customizes the inspector component and updates the prefab list when
-    /// the reference image library is changed.
-    /// </summary>
     [CustomEditor(typeof(MultiImageTracker))]
     class PrefabImagePairManagerInspector : Editor
     {
@@ -274,11 +270,6 @@ public class MultiImageTracker : MonoBehaviour, ISerializationCallbackReceiver
         }
     }
 #endif
-    private void OnGUI()
-    {
-        GUI.skin.label.fontSize = 60;
-        GUI.Label(new Rect(30, 30, 1000, 1000), message);
-    }
 }
 
 

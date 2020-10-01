@@ -33,29 +33,13 @@ public class GPSManager : MonoBehaviour
     {
         if(pointerMarkerDetection == true) {
             heading = Input.compass.trueHeading;
-            needle.transform.localRotation = Quaternion.Euler(0, 0, Input.compass.trueHeading + trackedImageTransform.eulerAngles.y);
+            needle.transform.localRotation = Quaternion.Euler(0, 0, trackedImageTransform.eulerAngles.y + Input.compass.trueHeading);
             message = Quaternion.Euler(0, 0, Input.compass.trueHeading + trackedImageTransform.eulerAngles.y).ToString();
         }
         else if(pointerMarkerDetection == false) {
             heading = Input.compass.trueHeading;
             needle.transform.localRotation = Quaternion.Euler(0, 0, heading);
         }
-    }
-
-    float Haversine(float lat1, float long1, float lat2, float long2)
-    {
-       
-        float earthRad = 6371000;
-        float lRad1 = lat1 * Mathf.Deg2Rad;
-        float lRad2 = lat2 * Mathf.Deg2Rad;
-        float dLat = (lat2 - lat1) * Mathf.Deg2Rad;
-        float dLong = (long2 - long1) * Mathf.Deg2Rad;
-        float a = Mathf.Sin(dLat / 2f) * Mathf.Sin(dLat / 2f) +
-            Mathf.Cos(lRad1) * Mathf.Cos(lRad2) *
-            Mathf.Sin(dLong / 2f) * Mathf.Sin(dLong / 2f);
-        float c = 2 * Mathf.Atan2(Mathf.Sqrt(a), Mathf.Sqrt(1 - a));
-
-        return earthRad * c;
     }
 
 
@@ -101,9 +85,9 @@ public class GPSManager : MonoBehaviour
         //Input.location.Stop();
     }
 
-    //private void OnGUI()
-    //{
-    //    GUI.skin.label.fontSize = 60;
-    //    GUI.Label(new Rect(30, 30, 1000, 1000), message);
-    //}
+    private void OnGUI()
+    {
+        GUI.skin.label.fontSize = 60;
+        GUI.Label(new Rect(30, 30, 1000, 1000), message);
+    }
 }

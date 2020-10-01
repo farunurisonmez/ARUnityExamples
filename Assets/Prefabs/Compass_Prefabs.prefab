@@ -46,6 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   trackedImageTransform: {fileID: 0}
+  pointerMarkerDetection: 0
   accuracy: 5
   displacement: 0
   needle: {fileID: 6665101054483539946}
