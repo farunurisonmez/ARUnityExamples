@@ -19,8 +19,8 @@ When a plane is detected, you can tap on the detected plane to place a cube on i
 
 <p align="center">
   <b>Marker Test</b><br>
-  <img src="https://storage.googleapis.com/fns-blog/public/frontend/assets/images/project/ar-compass/cameraMarker_Test1.gif" width="30%"> |
-  <img src="https://storage.googleapis.com/fns-blog/public/frontend/assets/images/project/ar-compass/pointerMarker_Test1.gif" width="30%"> |
+  <img src="https://storage.googleapis.com/fns-blog/public/frontend/assets/images/project/ar-compass/cameraMarker_Test1.gif" width="30%">
+  <img src="https://storage.googleapis.com/fns-blog/public/frontend/assets/images/project/ar-compass/pointerMarker_Test1.gif" width="30%">
   <a href="#"></a>
   <br><br>
 </p>
