@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5630465223376945786
+  m_GuidHigh: 10475198361132561554
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 5639934437205724943
+      m_GuidHigh: 6653553484716292789
+    m_SerializedTextureGuid:
+      m_GuidLow: 420116681237021631
+      m_GuidHigh: 2249590083616453945
+    m_Size: {x: 0.254, y: 0.254}
+    m_SpecifySize: 1
+    m_Name: pointerMarker
+    m_Texture: {fileID: 2800000, guid: 4d5943bf8de505d4393533204326381f, type: 3}
+  - m_SerializedGuid:
+      m_GuidLow: 5075628002340726337
+      m_GuidHigh: 9719421981828691109
+    m_SerializedTextureGuid:
+      m_GuidLow: 15606148701904901011
+      m_GuidHigh: 7121794999009767755
+    m_Size: {x: 0.254, y: 0.254}
+    m_SpecifySize: 1
+    m_Name: cameraMarker
+    m_Texture: {fileID: 2800000, guid: 38f713932d8fd8944b712197d1b2d562, type: 3}
