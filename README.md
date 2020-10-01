@@ -12,5 +12,4 @@ When a plane is detected, you can tap on the detected plane to place a cube on i
 
 | Action | Meaning |
 | ------ | ------- |
-| GPS  | |
-
+|    GPS     | North Direction Calculation For the value in the [pointer marker](https://storage.googleapis.com/fns-blog/public/frontend/assets/images/project/ar-compass/pointerMarker.png) property, the pointer is always measured relative to the rotation of the marker at its current position. North Direction For the value in the [camera marker](https://storage.googleapis.com/fns-blog/public/frontend/assets/images/project/ar-compass/cameraMarker.png) property, the pointer is always measured relative to the top of the screen at its current position.  |
