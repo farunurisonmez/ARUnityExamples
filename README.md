@@ -16,4 +16,4 @@ When a plane is detected, you can tap on the detected plane to place a cube on i
 |<img src="https://storage.googleapis.com/fns-blog/public/frontend/assets/images/project/ar-compass/cameraMarker.png" width="100%" alt="Compass Pointer Marker"></img>|North Direction For the value in the [camera marker](https://storage.googleapis.com/fns-blog/public/frontend/assets/images/project/ar-compass/cameraMarker.png) property, the pointer is always measured relative to the top of the screen at its current position. |
 | Tracking State | If the focus of the AR camera is the marker, the tracking status return as the marker is scanned. When the AR camera moves away, the marker returns not tracked when the marker leaves the frame. |
 
- ![](https://storage.googleapis.com/fns-blog/public/frontend/assets/images/project/ar-compass/20201001_123030.gif)
+ ![](https://storage.googleapis.com/fns-blog/public/frontend/assets/images/project/ar-compass/cameraMarker_Test1.gif)
